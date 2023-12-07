@@ -49,3 +49,13 @@ A managed Kubernetes cluster is set up and maintained by a cloud provider or a t
 - sudo systemctl `deamon-reload`
 - sudo systemctl `start` kubelet
 - sudo systemctl `enable` kubelet.service
+
+## Kubernetes master node commands
+- sudo kubeadm init
+- mkdir -p $HOME/.kube
+- sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+- sudo chown $(id -u):$(id -g) $HOME/.kube/config
+- kubectl get nodes
+- kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/tigera-operator.yaml
+- curl https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/custom-resources.yaml -O
+- kubeadm token create --print-join-command
