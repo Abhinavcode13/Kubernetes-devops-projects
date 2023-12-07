@@ -45,3 +45,7 @@ A managed Kubernetes cluster is set up and maintained by a cloud provider or a t
 - sudo apt `install kubeadm` kubelet kubectl kubernetes-cni
 - sudo apt-mark hold `kubeadm` kubelet kubectl kubernetes-cni
 - kubeadm `version`
+- sudo swapoff -a
+- sudo systemctl `deamon-reload`
+- sudo systemctl `start` kubelet
+- sudo systemctl `enable` kubelet.service
