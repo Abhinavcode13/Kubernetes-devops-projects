@@ -59,3 +59,18 @@ A managed Kubernetes cluster is set up and maintained by a cloud provider or a t
 - kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/tigera-operator.yaml
 - curl https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/custom-resources.yaml -O
 - kubeadm token create --print-join-command
+
+## Kubectl installation
+
+- Launch a new EC-2 Vm instance
+- curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+- chmod +x kubectl
+- mkdir -p ~/.local/bin
+- mv ./kubectl ~/.local/bin/kubectl
+- kubectl version
+- mkdir ~/.kube
+- cat ~/.kube/config `Take kube config file from master node and keep it here.`
+- vi ~/.kube/config
+- kubectl cluster-info
+- kubectl get node
+- 
