@@ -20,3 +20,21 @@ A managed Kubernetes cluster is set up and maintained by a cloud provider or a t
 - Google Kubernetes Engine (GKE)
 - Amazon EKS
 - Microsoft Azure Kubernetes Service (AKS)
+
+## Kubernetes cluster setup
+
+- Create one security group with protocol as "All traffic" port range as 0-65535
+- Create 3 ubuntu server using above created security group
+- Master node (t2.medium instance)
+- Worker node (t2.micro instance)
+
+## Common commands for master-slave nodes
+
+- sudo apt-get update
+- sudo apt-get install docker.io
+- docker --version
+- sudo usermod -aG docker $USER
+- sudo systemctl start docker
+- sudo systemctl enable docker
+
+## Installing kubernetes
