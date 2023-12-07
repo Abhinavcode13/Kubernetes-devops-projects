@@ -1,4 +1,22 @@
-Kubernetes cluster setup:
+# Kubernetes Cluster Setup
 
-It can be setup in two ways as self-managed and K8S cluster and managed K8S cluster.
--> Self managed cluster is using kudeadm and minikube
+There are two main ways to set up a Kubernetes cluster: self-managed and managed.
+
+## Self-Managed Cluster
+
+### Tools Used
+- `kubeadm`
+- `minikube`
+
+### Steps
+1. Install `kubeadm` on your servers or nodes.
+2. Use `kubeadm` to initialize the control plane.
+3. Set up worker nodes using `kubeadm join`.
+4. Install `minikube` to set up a single-node Kubernetes cluster for development purposes.
+
+## Managed Kubernetes Cluster
+
+A managed Kubernetes cluster is set up and maintained by a cloud provider or a third-party service. Examples include:
+- Google Kubernetes Engine (GKE)
+- Amazon EKS
+- Microsoft Azure Kubernetes Service (AKS)
