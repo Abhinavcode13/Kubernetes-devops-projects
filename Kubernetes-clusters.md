@@ -73,4 +73,24 @@ A managed Kubernetes cluster is set up and maintained by a cloud provider or a t
 - vi ~/.kube/config
 - kubectl cluster-info
 - kubectl get node
-- 
+
+## Kubernetes core components
+- Container
+- POD
+- Namespace
+- Service
+- Deployment
+- ReplicationController
+- ReplicationSet
+- DaemonsSets
+- PersistentVolumes
+- SatefulSets
+- Role
+- Secret Config Maps
+
+## Namespaces in kubernetes
+- Namespace represent a cluster inside another cluster
+- kubernetes components will be grouped logically using namepsace
+- kubectl get `namespace` (To fetch all the namespaces)
+- 3 Default namespace - Default, kube-system, kube-public
+- To get our own namespace - kubectl `create` namespace namespace-name
