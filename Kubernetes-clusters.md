@@ -164,3 +164,14 @@ spec:
 ```
 - To display the service : kubectl get svc
 - Range of NODEPORT service in K8S cluster is 30000-32767
+- Do not create the pods in K8S manually because if we create the pods manually on deleting it does not re-create the pod.
+- If we want to achieve high availabilty then avoid creating pods manually.
+- Instead we use K8S component to create pods to achieve high availabilty. (ReplicationController,ReplicationSet,DeamonSet,Deployment,StatefulSet)
+
+### ReplicationController
+
+- It is responsible to handle POD lifecycle
+- It will make sure given no of replica are running on given point of time.
+- Note : If any pod get crashed/deleted then replication controller replace it.
+- Replication controller is providing facility to create multiple PODS and make sure pods always exist.
+- Using this we can achieve high availabilty.
