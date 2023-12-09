@@ -94,3 +94,37 @@ A managed Kubernetes cluster is set up and maintained by a cloud provider or a t
 - kubectl get `namespace` (To fetch all the namespaces)
 - 3 Default namespace - Default, kube-system, kube-public
 - To get our own namespace - kubectl `create` namespace namespace-name
+
+## POD
+- POD is the smallest building block which we can execute inside a K8S cluster
+- POD can have one conatiner or more than one container
+- POD will execute in a node
+- One node can execute multiple POD
+- POD represents running container
+- Conatiners running inside the pod will share a unique network , storage and other specifications.
+- To run docker image we have to create a pod then K8S will execute the pod
+
+### How to create a POD
+1. Interactive
+- Creating `POD` using commands Ex : `kubectl` run --name javawebapppod `--image=abhinavcode13/javawebapp`
+2. Declarative
+- Creating `POD` using `YML` file
+- apiVersion: version of the api ex: v1, v2
+- kind: what is the purpose this manifest file
+- metadata: represents labels
+- spec: represents specifications
+
+### Simple pod.yml file
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.14.2
+    ports:
+    - containerPort: 80
+```
