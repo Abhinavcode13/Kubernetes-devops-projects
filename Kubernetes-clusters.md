@@ -162,3 +162,4 @@ spec:
       port: 80
       targetPort: 937
 ```
+- To display the service : kubectl get svc
