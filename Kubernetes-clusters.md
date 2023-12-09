@@ -129,3 +129,36 @@ spec:
     - containerPort: 80
 ```
 - $ Kubectl `apply` -f simple.yml
+- Description of the POD : kubectl `describe` pod simple.yml
+
+- Access POD using the POD ip
+- curl poid-ip:8080
+- We can not access pod using pod ip outside the cluster
+
+### POD lifecycle
+- Make a request to `API` server using manifest file(YML) to create a pod.
+- API server will save the pod info in `ETCD`.
+- `Scheduler` find the un scheduled pod info and schedule the pod for execution in NODE.
+- `kubelet` will see that pod execution schedule and trigger the `docker runtime`.
+- Dokcer runtime will run the container in the POD.
+- Pod is `ephemeral` and live for `short period` of time.
+- When the pod is `recreated` its `POD` id will change
+- So we use `kubernetes Service` component to run the PODS's
+- K8S service make the pod accessible outside and inside the cluster/network.
+
+### K8S Service
+- K8S service make the pod accessible outside and inside the cluster/network.
+- Service will identify the pod using the POD label.
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  selector:
+    app.kubernetes.io/name: MyApp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 937
+```
