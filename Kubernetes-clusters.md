@@ -128,3 +128,4 @@ spec:
     ports:
     - containerPort: 80
 ```
+- $ Kubectl `apply` -f simple.yml
