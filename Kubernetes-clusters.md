@@ -147,7 +147,7 @@ spec:
 - K8S service make the pod accessible outside and inside the cluster/network.
 
 ### K8S Service
-- K8S service make the pod accessible outside and inside the cluster/network.
+- K8S service make the pod accessible outside and inside the cluster/network using NODEPORT Service.
 - Service will identify the pod using the POD label.
 ```
 apiVersion: v1
@@ -163,3 +163,4 @@ spec:
       targetPort: 937
 ```
 - To display the service : kubectl get svc
+- Range of NODEPORT service in K8S cluster is 30000-32767
