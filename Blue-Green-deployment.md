@@ -5,3 +5,11 @@
 - It uses two production environment Blue and Green.
 -  Old version is blue env
 -  New version is green env
+
+## Advantages
+
+- Rapid releasing
+- Simple rollbacks
+- Built in disaster recovery
+- Seamless customer experience
+- Zero downtime
