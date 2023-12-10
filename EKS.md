@@ -66,3 +66,4 @@ Note : we will create worker nodes group using ASG group.
    10.  Maximum size: 3
    11.  It will take 4 subnets and then enable configure SSH access to the nodes.
    12.  Select key-pair -> create node group.
+   13.  Create a POD and expose the POD using NodePort service.
