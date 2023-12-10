@@ -12,7 +12,16 @@ Note : we will create worker nodes group using ASG group.
 ### Steps to create EKS Cluster in AWS
 
 - Create IAM role <br>
-     Entity type: AWS Service <br> 
-     Select usecase as "EKS" -> Select EKS cluster <br>
-     RoleName: EKSClusterRole <br>
-     Click on CreateRole
+   1.   Entity type: AWS Service <br> 
+   2.   Select usecase as "EKS" -> Select EKS cluster <br>
+   2.   RoleName: EKSClusterRole <br>
+   2.   Click on CreateRole
+ 
+- Create VPC using Cloud Formation using S3 URL.
+   1.   https://s3.us-west-2.amazonaws.com/amazon-eks/cloudformation/2020-10-29/amazon-eks-vpc-private-subnets.yaml
+   2.   Go to cloud formation in AWS service and click on create Stack.
+   3.   Template source : Amazon S3 URL
+   4.   Amazon S3 URL : Paste the above URL mentioned
+   5.   StackName : EKSClusterVPC and click on Next button.
+   6.   Tag : eks and key : cluster
+   7.   Add IAM role to it which was created previously,
