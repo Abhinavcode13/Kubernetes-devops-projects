@@ -8,3 +8,11 @@
 - AWS will have complete control over Control plane. we dont have control on Control plane.
 - We need to create worker nodes and attach it to control plane.
 Note : we will create worker nodes group using ASG group.
+
+### Steps to create EKS Cluster in AWS
+
+- Create IAM role <br>
+     Entity type: AWS Service <br> 
+     Select usecase as "EKS" -> Select EKS cluster <br>
+     RoleName: EKSClusterRole <br>
+     Click on CreateRole
