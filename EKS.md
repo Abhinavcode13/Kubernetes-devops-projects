@@ -52,3 +52,17 @@ Note : we will create worker nodes group using ASG group.
    3.   aws eks list-clusters
    4.   Update kubeconfig file to kubectl remote machine using below command:
    5.   aws eks update-kubeconfig --name cluster-name --region ap-south-1
+ 
+- Create IAM role for worker nodes
+   1.   Create a EC2 instance for the worker nodes in IAM role having below policies:
+   2.   AmazonEKSWorkerNodePolicy
+   3.   AmazonEKS_CNI_Policy
+   4.   AmazonEC2ContainerRegistryReadOnly
+   5.   Rolename: EKSworkernoderole -> Create role
+   6.   Go to EKS cluster -> Go to compute -> Add node group
+   7.   Select the IAM role created.
+   8.   Desired size: 2
+   9.   Minimum size: 2
+   10.  Maximum size: 3
+   11.  It will take 4 subnets and then enable configure SSH access to the nodes.
+   12.  Select key-pair -> create node group.
