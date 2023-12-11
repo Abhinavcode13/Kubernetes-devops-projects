@@ -46,3 +46,15 @@ kubectl edit svc stable-grafana
   3. Kibana - Used for visualization
 - It allows to search all the log files in a single place.
 - It provides a single logging in order to identify the problems with server or applications.
+
+### Setup ELK stack
+
+- kubectl create ns efk
+- kubectl get ns
+- helm ls
+- helm repo add elastic https //helm.elastic.co
+- helm repo ls
+- curl -O https://raw.githubusercontent.com/elastic/helm-charts/master/elasticsearch/examples/minikube/values.yaml
+- helm install elasticsearch elastic/elasticsearch -f ./values.yaml
+- helm ls -n efk
+- kubectl get all -n elk
