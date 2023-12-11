@@ -41,6 +41,8 @@ kubectl edit svc stable-grafana
 
 ## ELK Stack
 - It is a collection of three open source products
-  1. ElasticSearch
-  2. Logstash
-  3. Kibana
+  1. ElasticSearch - Used to store the logs
+  2. Logstash - Used to process the logs
+  3. Kibana - Used for visualization
+- It allows to search all the log files in a single place.
+- It provides a single logging in order to identify the problems with server or applications.
