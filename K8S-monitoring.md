@@ -1,11 +1,11 @@
-## Kubernetes monitoring
+## Kubernetes monitoring 
 
-### Prometheus
+### Prometheus (clusters)
 - Prometheus is an open source systems monitoring and alerting toolkit.
 - Prometheus collects and stores its metrics as time series data.
 - It provide out of box monitoring capabilities for the K8S container orchestration platform.
 
-### Grafana 
+### Grafana (clusters)
 
 - Grafana is a database analysis and monitoring tool.
 - Grafana is a multi-platform open source analytics and interactive vizualization web applications
