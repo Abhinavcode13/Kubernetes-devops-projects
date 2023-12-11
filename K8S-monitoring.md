@@ -49,12 +49,21 @@ kubectl edit svc stable-grafana
 
 ### Setup ELK stack
 
-- kubectl create ns efk
-- kubectl get ns
-- helm ls
-- helm repo add elastic https //helm.elastic.co
-- helm repo ls
-- curl -O https://raw.githubusercontent.com/elastic/helm-charts/master/elasticsearch/examples/minikube/values.yaml
-- helm install elasticsearch elastic/elasticsearch -f ./values.yaml
-- helm ls -n efk
-- kubectl get all -n elk
+- $ kubectl create ns efk
+- $ kubectl get ns
+- $ helm ls
+- $ helm repo add elastic https //helm.elastic.co
+- $ helm repo ls
+- $ curl -O https://raw.githubusercontent.com/elastic/helm-charts/master/elasticsearch/examples/minikube/values.yaml
+- $ helm install elasticsearch elastic/elasticsearch -f ./values.yaml
+- $ helm ls -n efk
+- $ kubectl get all -n elk
+- $ helm show values elastic/kibana >> kibana.values
+- vi kibana.values
+  1. Set replica to 1
+  2. Change service type from Cluster-IP to LoadBalancer
+  3. Change port to 80
+- $ helm install kibana elastic/kibana -f kibana.values -n efk
+- $ kubectl get all -n efk
+- $ helm install filebeat elastic/filebeat -n efk 
+- $ helm install metricbeat elastic/metricbeat -n efk
