@@ -31,3 +31,16 @@ $ helm install stable prometheus-community/kube-prometheus-stack
 $ kubectl getpods
 - Check the service <br>
 $ kubectl get svc
+
+- By deafult the service of prometheus and grafana is Cluster-IP , which can be accessed within the cluster so to access it outside the cluster we have to change the service to NodePort.
+
+- Edit the prometheus service (Loadbalamcer) <br> 
+kubectl edit svc stable-kube-prometheus-sta-prometheus
+- Edit the grafana service (LoadBalancer) <br>
+kubectl edit svc stable-grafana
+
+## ELK Stack
+- It is a collection of three open source products
+  1. ElasticSearch
+  2. Logstash
+  3. Kibana
